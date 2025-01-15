@@ -6,6 +6,29 @@ const outputDiv = document.getElementById('output');
 
 let mergedContent = "";
 
+fileInput.addEventListener('change', () => {
+    const files = Array.from(fileInput.files);
+    const fileListContainer = document.createElement('ul');
+    fileListContainer.id = 'fileList';
+    fileListContainer.style.listStyle = 'none';
+    fileListContainer.style.padding = '0';
+    fileListContainer.innerHTML = '';
+
+    files.forEach((file, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${index + 1}. ${file.name}`;
+        listItem.style.marginBottom = '5px';
+        fileListContainer.appendChild(listItem);
+    });
+
+    const existingList = document.getElementById('fileList');
+    if (existingList) {
+        existingList.replaceWith(fileListContainer);
+    } else {
+        mergeButton.insertAdjacentElement('beforebegin', fileListContainer);
+    }
+});
+
 mergeButton.addEventListener('click', async () => {
     const files = Array.from(fileInput.files);
     mergedContent = "";
