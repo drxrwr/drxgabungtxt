@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabung File TXT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gabung File TXT</h1>
+        <label for="fileInput">Pilih File TXT (Bisa lebih dari satu):</label>
+        <input type="file" id="fileInput" multiple accept=".txt">
+
+        <label for="fileName">Nama File Baru:</label>
+        <input type="text" id="fileName" placeholder="Masukkan nama file baru">
+
+        <button id="mergeButton">Gabung dan Tampilkan</button>
+        <button id="saveButton" disabled>Simpan</button>
+
+        <div id="output" style="display:none;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
