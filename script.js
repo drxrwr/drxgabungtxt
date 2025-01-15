@@ -17,7 +17,7 @@ mergeButton.addEventListener('click', async () => {
 
     for (const file of files) {
         const text = await file.text();
-        mergedContent += text + "\\n"; // Gabungkan isi file dengan newline
+        mergedContent += text; // Gabungkan isi file tanpa newline
     }
 
     outputDiv.style.display = 'block';
